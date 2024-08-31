@@ -13,11 +13,6 @@ class UserController extends BaseController
         $this->model = new UserModel();
     }
 
-    public function login()
-    {
-        return view('user/Login');
-    }
-
     public function index(): string
     {
         $data['user'] = $this->model->findAll();
@@ -27,10 +22,6 @@ class UserController extends BaseController
     public function createUser() {}
 
     public function updateUser() {}
-    public function deleteUser() {}
 
-    public function home(): string
-    {
-        return view('Home');
-    }
+    public function deleteUser() {}
 }

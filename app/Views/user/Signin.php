@@ -37,9 +37,18 @@
 <body>
     <form class="form-signin">
         <div class="text-center mb-4">
-            <h1>Log in to Library</h1>
+            <h1>Register to Library</h1>
         </div>
+        <select name="usertype" class="form-select my-3" aria-label="Default select example">
+            <option selected disabled>Select user type</option>
+            <option value="admin">Administrator</option>
+            <option value="clis">Client</option>
+        </select>
 
+        <div class="form-label-group">
+            <input type="text" id="username" name="username" class="form-control" placeholder="Username" required autofocus>
+            <label for="username">Username</label>
+        </div>
         <div class="form-label-group">
             <input type="email" id="inputEmail" class="form-control" placeholder="Email address" required autofocus>
             <label for="inputEmail">Email address</label>
@@ -50,11 +59,7 @@
             <label for="inputPassword">Password</label>
         </div>
 
-        <div class="checkbox mb-3">
-            <label>
-                <input type="checkbox" value="remember-me"> Remember me
-            </label>
-        </div>
+
         <button class="btn btn-lg btn-primary btn-block" type="submit">Sign in</button>
         <p class="mt-5 mb-3 text-muted text-center">&copy; 2017-2019</p>
     </form>
