@@ -8,5 +8,6 @@ class AuthModel extends Model
 {
     protected $table = 'users';
     protected $primarykey = 'id';
-    protected $allowedFields = ['username', 'email', 'password', 'isAdmin'];
+    protected $allowedFields = ['username', 'email', 'password', 'user_type'];
+    protected $useTimestamps = true;
 }

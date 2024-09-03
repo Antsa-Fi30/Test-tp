@@ -3,9 +3,12 @@
 namespace App\Controllers;
 
 use App\Models\AuthModel;
+use CodeIgniter\CLI\Console;
+use CodeIgniter\HTTP\RedirectResponse;
 
-class UserController extends BaseController
+class AuthController extends BaseController
 {
+
     private $model;
 
     public function __construct()
@@ -13,7 +16,67 @@ class UserController extends BaseController
         $this->model = new AuthModel();
     }
 
-    public function login() {}
+    public function login(): string
+    {
+        return view('auth/login');
+    }
 
-    public function registre() {}
+    public function signin(): string
+    {
+        return view('auth/signin');
+    }
+
+    public function save(): RedirectResponse
+    {
+
+        $email = $this->request->getPost('email');
+        $username = $this->request->getPost('username');
+        $password = password_hash($this->request->getPost('password'), PASSWORD_DEFAULT);
+        $userType = $this->request->getPost('usertype');
+
+        $data = [
+            'username' => $username,
+            'email' => $email,
+            'password' => $password,
+            'user_type' => $userType
+        ];
+
+        $this->model->insert($data);
+
+        return redirect()->to('/login');
+    }
+
+    public function auth()
+    {
+        $email = $this->request->getPost('email');
+        $password = $this->request->getPost('password');
+
+        $user_exist = $this->model->where('email', $email)->first(); //Search the user account in table users by mail;
+
+        if ($user_exist && password_verify($password, $user_exist['password'])) {
+            session()->set([
+                'id' => $user_exist['id'],
+                'username' => $user_exist['username'],
+                'userType' => $user_exist['user_type'],
+                'Logged' => true,
+            ]);
+
+            return redirect()->to('/');
+        } else {
+            return redirect()->back()->with('error', 'Invalid login credentials');
+        }
+    }
+
+    public function indexWelcome()
+    {
+
+
+        return view('templates/welcome');
+    }
+
+    public function logout()
+    {
+        session()->destroy();
+        return redirect()->to('/login');
+    }
 }

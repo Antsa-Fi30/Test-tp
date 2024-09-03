@@ -37,14 +37,14 @@
 <body class="containerpattern">
     <div class="cards">
         <div class="cards2">
-            <form class="form-signin" action="/signin" method="post">
+            <form class="form-signin" action="/auth/save" method="post">
                 <div class="text-center mb-4">
                     <h1 class="text-success">Register to Library</h1>
                 </div>
                 <select name="usertype" class="form-select my-3" aria-label="Default select example">
                     <option selected disabled>Select user type</option>
                     <option value="admin">Administrator</option>
-                    <option value="clis">Client</option>
+                    <option value="cli">Client</option>
                 </select>
 
                 <div class="form-label-group">
@@ -57,12 +57,12 @@
                 </div>
 
                 <div class="form-label-group">
-                    <input type="password" name="password" id="inputPassword" class="form-control" placeholder="Password" required>
+                    <input type="password" name="password" id="password" class="form-control" placeholder="Password" required>
                     <label for="inputPassword">Password</label>
                 </div>
 
                 <div class="form-label-group">
-                    <input type="cpassword" name="cpassword" id="inputPassword" class="form-control" placeholder="Password" required>
+                    <input type="cpassword" name="cpassword" id="cpassword" class="form-control" placeholder="Password" required>
                     <label for="inputPassword">Confirm password</label>
                 </div>
 

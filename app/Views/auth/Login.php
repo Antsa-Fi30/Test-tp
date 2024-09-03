@@ -11,8 +11,8 @@
 
 
     <!-- Bootstrap core CSS -->
-    <link rel="stylesheet" href="bootstrap/css/bootstrap.min.css">
-    <link rel="stylesheet" href="bootstrap/css/styles.css">
+    <link rel="stylesheet" href="/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/bootstrap/css/styles.css">
 
 
     <style>
@@ -32,22 +32,16 @@
         }
     </style>
     <!-- Custom styles for this template -->
-    <link href="bootstrap/css/floating-label.css" rel="stylesheet">
+    <link href="/bootstrap/css/floating-label.css" rel="stylesheet">
 </head>
 
 <body class="containerpattern">
     <div class="cards">
         <div class="cards2">
-            <form action="<?php echo base_url('loguser') ?>" class="form-signin" method="post">
+            <form action="/auth/authenticate" class="form-signin" method="post">
                 <div class="text-center mb-4">
                     <h1 class="text-primary">Log in to Library</h1>
                 </div>
-
-                <select name="usertype" class="form-select my-3" aria-label="Default select example">
-                    <option selected disabled>Select user type</option>
-                    <option value="admin">Administrator</option>
-                    <option value="clis">Client</option>
-                </select>
 
                 <div class="form-label-group">
                     <input type="email" name="email" id="inputEmail" class="form-control" placeholder="Email address" required autofocus>
