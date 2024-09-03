@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>CRUD User</title>
+    <title>Books</title>
     <link rel="stylesheet" href="bootstrap/css/bootstrap.min.css">
 </head>
 
@@ -21,6 +21,7 @@
                     <th>id</th>
                     <th>name</th>
                     <th>email</th>
+                    <th>password</th>
                     <th>actions</th>
                 </tr>
             </thead>
@@ -30,6 +31,7 @@
                         <td><?= $row['id'] ?></td>
                         <td><?= $row['name'] ?></td>
                         <td><?= $row['email'] ?></td>
+                        <td><?= $row['password'] ?></td>
                         <td class="flex flex-row gap-3">
                             <button class="btn btn-outline-warning">Modifier</button>
                             <button class="btn btn-outline-danger">Supprimer</button>
