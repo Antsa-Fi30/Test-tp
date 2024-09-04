@@ -37,6 +37,7 @@
 <body class="containerpattern">
     <div class="cards">
         <div class="cards2">
+
             <form class="form-signin" action="/auth/save" method="post">
                 <div class="text-center mb-4">
                     <h1 class="text-success">Register to Library</h1>
@@ -62,7 +63,7 @@
                 </div>
 
                 <div class="form-label-group">
-                    <input type="cpassword" name="cpassword" id="cpassword" class="form-control" placeholder="Password" required>
+                    <input type="password" name="cpassword" id="cpassword" class="form-control" placeholder="Password" required>
                     <label for="inputPassword">Confirm password</label>
                 </div>
 

@@ -16,10 +16,10 @@ $routes->get('auth/logout', 'AuthController::logout');
 //Books
 $routes->get('/books', 'BookController::index');
 $routes->get('/books/create', 'BookController::create');
-$routes->post('/books/create', 'BookController::store');
+$routes->post('/books/savecreate', 'BookController::store');
 $routes->get('/books/edit/(:num)', 'BookController::edit/$1');
-$routes->post('/books/update/(:num)', 'BookController::update/$1');
-$routes->get('/books/delete/(:num)', 'BookController::delete/$1');
+$routes->put('/books/update/(:num)', 'BookController::update/$1');
+$routes->delete('/books/delete/(:num)', 'BookController::delete/$1');
 
 //Authors
 $routes->get('/authors', 'AuthorController::index');

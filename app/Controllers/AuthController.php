@@ -28,7 +28,6 @@ class AuthController extends BaseController
 
     public function save(): RedirectResponse
     {
-
         $email = $this->request->getPost('email');
         $username = $this->request->getPost('username');
         $password = password_hash($this->request->getPost('password'), PASSWORD_DEFAULT);
@@ -41,9 +40,14 @@ class AuthController extends BaseController
             'user_type' => $userType
         ];
 
-        $this->model->insert($data);
 
-        return redirect()->to('/login');
+        if ($this->model->insert($data)) {
+            session()->setFlashdata('success', 'Signed successfully');
+            return redirect()->to('/login');
+        } else {
+            session()->setFlashdata('error', 'Something went wrong when saving your account');
+            return redirect()->back();
+        }
     }
 
     public function auth()
@@ -63,14 +67,13 @@ class AuthController extends BaseController
 
             return redirect()->to('/');
         } else {
-            return redirect()->back()->with('error', 'Invalid login credentials');
+            session()->setFlashdata('error', 'Invalid login credentials');
+            return redirect()->to('/login');
         }
     }
 
     public function indexWelcome()
     {
-
-
         return view('templates/welcome');
     }
 
