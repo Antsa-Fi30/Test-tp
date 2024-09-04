@@ -29,11 +29,7 @@
             <div class="jumbotron">
                 <div class="container">
                     <h1 class="display-3 my-4">Hello, <span class="labelhollow"><?php echo (session()->get('username')); ?></span></h1>
-                    <?php if (session()->get('userType') === 'admin'): ?>
-                        <p class="labelhollow">You're an admin.</p>
-                    <?php else: ?>
-                        <p>Look down here how to use Library.</p>
-                    <?php endif ?>
+                    <p>Look down here how to use Library.</p>
                 </div>
 
             </div>

@@ -21,12 +21,13 @@
             E-Library
         </h2>
         <p class="labelhollow">
-            You're a : <?= session()->get('userType') ?>
+            <?= session()->get('username') ?>
         </p>
+
         <hr>
         <div class="d-flex flex-column gap-3">
             <a class="linkNavigator <?= ($uri->getSegment(1) == 'books' ? 'activate' : '') ?>" href="/books">Books</a>
-            <a class="linkNavigator <?= ($uri->getSegment(1) == 'author' ? 'activate' : '') ?>" href="/author">Authors</a>
+            <a class="linkNavigator <?= ($uri->getSegment(1) == 'author' ? 'activate' : '') ?>" href="/authors">Authors</a>
             <a class="linkNavigator <?= ($uri->getSegment(1) == 'cart' ? 'activate' : '') ?>" href="/cart">Cart</a>
             <a class="linkNavigator" href="/auth/logout">Logout</a>
         </div>

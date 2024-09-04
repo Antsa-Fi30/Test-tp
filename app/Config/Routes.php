@@ -18,11 +18,23 @@ $routes->get('auth/logout', 'AuthController::logout');
  * Books'routes CRUD
  */
 $routes->get('/books', "BookController::index");
+$routes->get('/books/create', "BookController::create");
+$routes->post('/books/create/save', "BookController::store");
+$routes->get('/books/edit/(:num)', "BookController::edit/$1");
+$routes->post('/books/update/(:num)', "BookController::update/$1");
+$routes->delete('/books/delete/(:num)', "BookController::delete/$1");
+
 
 /**
  * Author'routes CRUD
  */
-$routes->get('/author', "AuthorController::index");
+$routes->get('/authors', "AuthorController::index");
+$routes->get('/authors/create', "AuthorController::create");
+$routes->post('/authors/create/save', "AuthorController::store");
+$routes->get('/authors/edit/(:num)', "AuthorController::edit/$1");
+$routes->post('/authors/update/(:num)', "AuthorController::update/$1");
+$routes->get('/authors/delete/(:num)', "AuthorController::delete/$1");
+
 
 /**
  * Cart'routes CRUD

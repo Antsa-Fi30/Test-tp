@@ -8,4 +8,6 @@ class BookModel extends Model
 {
     protected $table = 'books';
     protected $primarykey = 'id';
+    protected $allowedFields = ['title', 'authors_id', 'stocked_date'];
+    protected $useTimestamps = false;
 }

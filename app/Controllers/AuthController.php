@@ -61,7 +61,6 @@ class AuthController extends BaseController
             session()->set([
                 'id' => $user_exist['id'],
                 'username' => $user_exist['username'],
-                'userType' => $user_exist['user_type'],
                 'Logged' => true,
             ]);
 
