@@ -44,7 +44,7 @@
                     <div class="col-md-4">
                         <h2 class="labelhollow">Authors</h2>
                         <p>One author can make one hundred books.Take a look at them and their works by clicking the button bellow</p>
-                        <a href="/authors" class="button10">View authors >></a>
+                        <a href="/author" class="button10">View authors >></a>
                     </div>
                     <div class="col-md-4">
                         <h2 class="labelhollow">Books</h2>

@@ -4,4 +4,10 @@ namespace App\Controllers;
 
 use App\Controllers\BaseController;
 
-class AuthorController extends BaseController {}
+class AuthorController extends BaseController
+{
+    public function index(): string
+    {
+        return view('/authors/Author');
+    }
+}
