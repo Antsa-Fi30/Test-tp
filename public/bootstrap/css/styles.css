@@ -67,6 +67,7 @@
 
 /*button*/
 .button10 {
+  text-decoration: none;
   display: inline-block;
   transition: all 0.3s ease;
   position: relative;

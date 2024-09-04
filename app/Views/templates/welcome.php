@@ -13,7 +13,7 @@
 
 <pre>
 <?php
-var_dump(session()->get('logged'));
+var_dump(session()->get('Logged'));
 ?>
 </pre>
 
@@ -52,17 +52,17 @@ var_dump(session()->get('logged'));
                     <div class="col-md-4">
                         <h2 class="labelhollow">Authors</h2>
                         <p>One author can make one hundred books.Take a look at them and their works by clicking the button bellow</p>
-                        <button class="button10">View authors >></button>
+                        <a href="/authors" class="button10">View authors >></a>
                     </div>
                     <div class="col-md-4">
                         <h2 class="labelhollow">Books</h2>
                         <p>The books are repartitioned by categories like fiction, non-fiction or something else. Check them out! </p>
-                        <button class="button10">View all books >></button>
+                        <a href="/books" class="button10">View all books >></a>
                     </div>
                     <div class="col-md-4">
                         <h2 class="labelhollow">Your Cart</h2>
                         <p>Here you'll find out how many book and what kind of book(s) have you borrowed from the Library</p>
-                        <button class="button10">View cart >></button>
+                        <a href="/cart" class="button10">View cart >></a>
                     </div>
                 </div>
 
