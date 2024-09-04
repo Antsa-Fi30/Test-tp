@@ -9,14 +9,6 @@
     <title>Welcome to Library</title>
 </head>
 
-
-
-<pre>
-<?php
-var_dump(session()->get('Logged'));
-?>
-</pre>
-
 <body class="containerpattern text-white px-5">
     <div class="container my-2">
         <a href="/auth/logout">
