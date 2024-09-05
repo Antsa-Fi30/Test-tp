@@ -45,7 +45,7 @@
                 <select name="usertype" class="form-select my-3" aria-label="Default select example">
                     <option selected disabled>Select user type</option>
                     <option value="admin">Administrator</option>
-                    <option value="cli">Client</option>
+                    <option value="client">Client</option>
                 </select>
 
                 <div class="form-label-group">

@@ -23,11 +23,14 @@
         <p class="labelhollow">
             <?= session()->get('username') ?>
         </p>
+        <p class="labelhollow">
+            <?= session()->get('user_type') ?>
+        </p>
 
         <hr>
         <div class="d-flex flex-column gap-3">
             <a class="linkNavigator <?= ($uri->getSegment(1) == 'books' ? 'activate' : '') ?>" href="/books">Books</a>
-            <a class="linkNavigator <?= ($uri->getSegment(1) == 'author' ? 'activate' : '') ?>" href="/authors">Authors</a>
+            <a class="linkNavigator <?= ($uri->getSegment(1) == 'authors' ? 'activate' : '') ?>" href="/authors">Authors</a>
             <a class="linkNavigator <?= ($uri->getSegment(1) == 'cart' ? 'activate' : '') ?>" href="/cart">Cart</a>
             <a class="linkNavigator" href="/auth/logout">Logout</a>
         </div>

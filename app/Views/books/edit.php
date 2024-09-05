@@ -1,7 +1,6 @@
 <?php $title = 'Books'; ?>
 <?= view('templates/header', ['title' => 'Books']) ?>
 
-<?= var_dump($book) ?>
 
 <div class="d-flex flex-column justify-center align-items-center">
     <h1>Edit Book</h1>

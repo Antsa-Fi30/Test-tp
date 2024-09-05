@@ -49,6 +49,7 @@ class BookController extends BaseController
         $data['authors'] = $this->modelA->findAll();
         $data['book'] = $this->model->find($id);
 
+        $data['book']['stocked_date'] = date('Y-m-d', strtotime($data['book']['stocked_date']));
 
         return view('books/edit', $data);
     }
@@ -61,7 +62,8 @@ class BookController extends BaseController
             'stocked_date' => $this->request->getPost('stocked_date'),
         ];
 
-        $this->model->save($id, $data);
+        $this->model->update($id, $data);
+
 
         return redirect()->to('/books');
     }

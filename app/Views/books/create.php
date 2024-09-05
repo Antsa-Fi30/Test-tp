@@ -1,6 +1,7 @@
 <?php $title = 'Books'; ?>
 <?= view('templates/header', ['title' => 'Books']) ?>
-<?= var_dump($authors) ?>
+
+
 <div class="d-flex flex-column justify-center align-items-center">
     <h1>Add New Book here</h1>
 

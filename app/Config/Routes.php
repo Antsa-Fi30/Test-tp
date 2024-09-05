@@ -41,3 +41,11 @@ $routes->get('/authors/delete/(:num)', "AuthorController::delete/$1");
  */
 $routes->get('/cart', "CartController::index");
 $routes->get('/cart/add/(:num)', "CartController::add/$1");
+$routes->get('/cart/delete/(:num)', "CartController::delete/$1");
+
+/**
+ * Cart'admin routes CRUD
+ */
+$routes->get('/cart/admin', "CartController::index");
+$routes->get('/cart/admin/add/(:num)', "CartController::add/$1");
+$routes->get('/cart/admin/delete/(:num)', "CartController::delete/$1");

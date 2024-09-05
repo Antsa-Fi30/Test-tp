@@ -20,5 +20,9 @@ class CartController extends BaseController
         return view('/cart/index', $data);
     }
 
-    public function add() {}
+    public function delete($id)
+    {
+        $this->model->delete($id);
+        return redirect()->to('/cart');
+    }
 }
