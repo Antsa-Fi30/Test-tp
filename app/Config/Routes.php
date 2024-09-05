@@ -22,7 +22,7 @@ $routes->get('/books/create', "BookController::create");
 $routes->post('/books/create/save', "BookController::store");
 $routes->get('/books/edit/(:num)', "BookController::edit/$1");
 $routes->post('/books/update/(:num)', "BookController::update/$1");
-$routes->delete('/books/delete/(:num)', "BookController::delete/$1");
+$routes->get('/books/delete/(:num)', "BookController::delete/$1");
 
 
 /**
@@ -40,3 +40,4 @@ $routes->get('/authors/delete/(:num)', "AuthorController::delete/$1");
  * Cart'routes CRUD
  */
 $routes->get('/cart', "CartController::index");
+$routes->get('/cart/add/(:num)', "CartController::add/$1");

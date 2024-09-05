@@ -21,6 +21,7 @@
                     <th scope="col">Title</th>
                     <th scope="col">Author</th>
                     <th scope="col">Stocked Date</th>
+                    <th scope="col">Disponibility</th>
                     <th scope="col">Actions</th>
                 </tr>
             </thead>
@@ -29,8 +30,9 @@
                     <tr>
                         <td><?= $book['id'] ?></td>
                         <td><?= $book['title'] ?></td>
-                        <td><?= $book['authors_id'] ?></td>
+                        <td><?= $book['author_name'] ?></td>
                         <td><?= $book['stocked_date'] ?></td>
+                        <td><?= $book['dispo'] ?></td>
                         <td class="d-flex flex-row gap-3 text-center justify-center">
                             <a href="/books/edit/<?= $book['id'] ?>" class="btn btn-outline-warning" type="button">Edit</a>
                             <a href="/books/delete/<?= $book['id'] ?>" class="btn btn-outline-danger" type="button">Delete</a>

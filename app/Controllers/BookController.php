@@ -3,27 +3,32 @@
 namespace App\Controllers;
 
 use App\Controllers\BaseController;
+use App\Models\AuthorModel;
 use App\Models\BookModel;
 
 class BookController extends BaseController
 {
     private $model;
+    private $modelA;
 
     public function __construct()
     {
         $this->model = new BookModel();
+        $this->modelA = new AuthorModel();
     }
 
     public function index(): string
     {
-        $data['books'] = $this->model->findAll();
+        $data['authors'] = $this->modelA->findAll();
+        $data['books'] =  $this->model->getAuthor();
 
         return view('/books/index', $data);
     }
 
     public function create(): string
     {
-        return view('/books/create');
+        $data['authors'] = $this->modelA->findAll();
+        return view('/books/create', $data);
     }
 
     public function store()
@@ -41,7 +46,10 @@ class BookController extends BaseController
 
     public function edit($id)
     {
+        $data['authors'] = $this->modelA->findAll();
         $data['book'] = $this->model->find($id);
+
+
         return view('books/edit', $data);
     }
 
