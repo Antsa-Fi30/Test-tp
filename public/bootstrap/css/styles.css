@@ -259,7 +259,7 @@ a:focus {
   border: 1px solid rgba(255, 255, 255, 0.18);
   width: 20%;
   min-width: fit-content;
-  min-height: 95vh;
+  max-height: 95vh;
   padding: 2%;
 }
 
@@ -272,8 +272,9 @@ a:focus {
   border: 1px solid rgba(255, 255, 255, 0.18);
   width: 20%;
   max-width: 100%;
-  min-height: 95vh;
+  max-height: 95vh;
   padding: 2%;
+  overflow-y: scroll;
 }
 
 /* Links */

@@ -29,7 +29,7 @@
             <div class="jumbotron">
                 <div class="container">
                     <h1 class="display-3 my-4">Hello, <span class="labelhollow"><?php echo (session()->get('username')); ?></span></h1>
-                    <p>Look down here how to use Library.</p>
+                    <?= (session()->get('user_type') === 'admin') ? "<p>You're an admin so you can do a CRUD operations authors, and books</p>" : "<p>Look down here how to use Library.</p>" ?>
                 </div>
 
             </div>
@@ -37,21 +37,23 @@
             <div class="container pt-2">
                 <!-- Example row of columns -->
                 <div class="row">
-                    <div class="col-md-4">
+                    <div class="<?= (session()->get('user_type') === 'client') ? 'col-md-4' : 'col-md-6' ?>">
                         <h2 class="labelhollow">Authors</h2>
-                        <p>One author can make one hundred books.Take a look at them and their works by clicking the button bellow</p>
+                        <?= (session()->get('user_type') === 'admin') ? "<p>Do some CRUD operation on authors, their're related on books</p>" : "<p>One author can make one hundred books.Take a look at them and their works by clicking the button bellow</p>" ?>
                         <a href="/author" class="button10">View authors >></a>
                     </div>
-                    <div class="col-md-4">
+                    <div class="<?= (session()->get('user_type') === 'client') ? 'col-md-4' : 'col-md-6' ?>">
                         <h2 class="labelhollow">Books</h2>
-                        <p>The books are repartitioned by categories like fiction, non-fiction or something else. Check them out! </p>
+                        <?= (session()->get('user_type') === 'admin') ? "<p>Do some CRUD operation on books, their can be lended by client users</p>" : "<p>The books are repartitioned by categories like fiction, non-fiction or something else. Check them out! </p>" ?>
                         <a href="/books" class="button10">View all books >></a>
                     </div>
-                    <div class="col-md-4">
-                        <h2 class="labelhollow">Your Cart</h2>
-                        <p>Here you'll find out how many book and what kind of book(s) have you borrowed from the Library</p>
-                        <a href="/cart" class="button10">View cart >></a>
-                    </div>
+                    <?php if (session()->get('user_type') === 'client'): ?>
+                        <div class="col-md-4">
+                            <h2 class="labelhollow">Your Cart</h2>
+                            <p>Here you'll find out how many book and what kind of book(s) have you borrowed from the Library</p>
+                            <a href="/cart" class="button10">View cart >></a>
+                        </div>
+                    <?php endif; ?>
                 </div>
 
                 <hr>
