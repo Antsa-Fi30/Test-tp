@@ -39,8 +39,8 @@
                 <div class="row">
                     <div class="<?= (session()->get('user_type') === 'client') ? 'col-md-4' : 'col-md-6' ?>">
                         <h2 class="labelhollow">Authors</h2>
-                        <?= (session()->get('user_type') === 'admin') ? "<p>Do some CRUD operation on authors, their're related on books</p>" : "<p>One author can make one hundred books.Take a look at them and their works by clicking the button bellow</p>" ?>
-                        <a href="/author" class="button10">View authors >></a>
+                        <?= (session()->get('user_type') === 'admin') ? "<p>Do some CRUD operation on authors as an admin of E-Library, their're related on books</p>" : "<p>One author can make one hundred books.Take a look at them and their works by clicking the button bellow</p>" ?>
+                        <a href="/authors" class="button10">View authors >></a>
                     </div>
                     <div class="<?= (session()->get('user_type') === 'client') ? 'col-md-4' : 'col-md-6' ?>">
                         <h2 class="labelhollow">Books</h2>
@@ -51,7 +51,7 @@
                         <div class="col-md-4">
                             <h2 class="labelhollow">Your Cart</h2>
                             <p>Here you'll find out how many book and what kind of book(s) have you borrowed from the Library</p>
-                            <a href="/cart" class="button10">View cart >></a>
+                            <a href="/borrowedList" class="button10">View cart >></a>
                         </div>
                     <?php endif; ?>
                 </div>

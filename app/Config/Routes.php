@@ -1,6 +1,5 @@
 <?php
 
-use App\Controllers\BookController;
 use CodeIgniter\Router\RouteCollection;
 
 /**
@@ -23,6 +22,7 @@ $routes->post('/books/create/save', "BookController::store");
 $routes->get('/books/edit/(:num)', "BookController::edit/$1");
 $routes->post('/books/update/(:num)', "BookController::update/$1");
 $routes->get('/books/delete/(:num)', "BookController::delete/$1");
+$routes->get('/books/search', 'BookController::search');
 
 
 /**
@@ -35,17 +35,14 @@ $routes->get('/authors/edit/(:num)', "AuthorController::edit/$1");
 $routes->post('/authors/update/(:num)', "AuthorController::update/$1");
 $routes->get('/authors/delete/(:num)', "AuthorController::delete/$1");
 
+// Borrowing
+$routes->get('/books/lend/(:num)', 'BorrowController::addToCart/$1');
+$routes->get('/books/cancel/(:num)', 'BorrowController::deleteToCart/$1');
 
-/**
- * Cart'routes CRUD
- */
-$routes->get('/cart', "CartController::index");
-$routes->get('/cart/add/(:num)', "CartController::add/$1");
-$routes->get('/cart/delete/(:num)', "CartController::delete/$1");
-
-/**
- * Cart'admin routes CRUD
- */
-$routes->get('/cart/admin', "CartController::index");
-$routes->get('/cart/admin/add/(:num)', "CartController::add/$1");
-$routes->get('/cart/admin/delete/(:num)', "CartController::delete/$1");
+//Cart lists
+$routes->get('/borrowedList', "BorrowController::index");
+$routes->get('/confirmBorrow/(:num)', "BorrowController::confirm/$1");
+$routes->post('/Addborrow/(:num)', "BorrowController::addToCart/$1");
+$routes->get('/editconfirm/(:num)', "BorrowController::editconfirm/$1");
+$routes->post('/editupdate/(:num)', "BorrowController::editupdate/$1");
+$routes->get('/cancelborrow/(:num)', "BorrowController::deleteToCart/$1");

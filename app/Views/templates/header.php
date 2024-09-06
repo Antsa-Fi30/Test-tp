@@ -31,12 +31,10 @@
         <div class="d-flex flex-column gap-3">
             <a class="linkNavigator <?= ($uri->getSegment(1) == 'books' ? 'activate' : '') ?>" href="/books">Books</a>
             <a class="linkNavigator <?= ($uri->getSegment(1) == 'authors' ? 'activate' : '') ?>" href="/authors">Authors</a>
-            <?php if (session()->get('user_type') === 'client'): ?>
-                <a class="linkNavigator <?= ($uri->getSegment(1) == 'cart' ? 'activate' : '') ?>" href="/cart">Cart</a>
-            <?php endif; ?>
+            <a class="linkNavigator <?= ($uri->getSegment(1) == 'cart' ? 'activate' : '') ?>" href="/borrowedList">Cart</a>
             <a class="linkNavigator" href="/auth/logout">Logout</a>
         </div>
 
     </header>
     <!-- Main Content -->
-    <main class="glass glassmain h-100 w-100 my-2">
+    <main class="glass glassmain w-100 my-2">

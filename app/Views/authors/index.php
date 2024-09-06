@@ -7,12 +7,7 @@
             Add authors
         </a>' ?>
     </div>
-    <div class="container my-4 d-flex flex-row gap-2 align-items-center">
-        <input placeholder="type it" class="input" name="text" type="text" />
-        <button class="button">
-            <span class="span">🔎</span>
-        </button>
-    </div>
+
     <div class="container">
         <table class="table table-striped table-dark">
             <thead>

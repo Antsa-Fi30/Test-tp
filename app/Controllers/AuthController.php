@@ -3,7 +3,6 @@
 namespace App\Controllers;
 
 use App\Models\AuthModel;
-use CodeIgniter\CLI\Console;
 use CodeIgniter\HTTP\RedirectResponse;
 
 class AuthController extends BaseController
@@ -30,7 +29,7 @@ class AuthController extends BaseController
     {
         $email = $this->request->getPost('email');
         $username = $this->request->getPost('username');
-        $password = password_hash($this->request->getPost('password'), PASSWORD_DEFAULT);
+        $password = password_hash($this->request->getPost('password'), PASSWORD_DEFAULT); //Permet de securiser en tournant le mot de passe en non lisible
         $userType = $this->request->getPost('usertype');
 
         $data = [
@@ -42,6 +41,7 @@ class AuthController extends BaseController
 
 
         if ($this->model->insert($data)) {
+            //Permet d'afficher une signe de succes dans la page login pour montrer que le compte est enregistré
             session()->setFlashdata('success', 'Signed successfully');
             return redirect()->to('/login');
         } else {

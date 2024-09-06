@@ -17,6 +17,15 @@ class BookController extends BaseController
         $this->modelA = new AuthorModel();
     }
 
+    public function search()
+    {
+        $bookSearch = $this->request->getGet('bookSearch');
+        $data['books'] = $this->model->searchBooks($bookSearch);
+        $data['bookSearch'] = $bookSearch;
+
+        return view('/books/index', $data);
+    }
+
     public function index(): string
     {
         $data['authors'] = $this->modelA->findAll();
@@ -49,6 +58,7 @@ class BookController extends BaseController
         $data['authors'] = $this->modelA->findAll();
         $data['book'] = $this->model->find($id);
 
+        //Sert a assurer la formattage de la date a cause d'un bug de timetoString()
         $data['book']['stocked_date'] = date('Y-m-d', strtotime($data['book']['stocked_date']));
 
         return view('books/edit', $data);
