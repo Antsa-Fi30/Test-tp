@@ -23,6 +23,12 @@ class BorrowController extends BaseController
         return view('/borrows/index', $data);
     }
 
+    public function confirm($id)
+    {
+        $data['book'] = $this->modelB->find($id);
+        return view('/borrows/confirm', $data);
+    }
+
     /**
      * Operation Create de l'entite Borrow qui se fait dans le partie Book pour le client
      */

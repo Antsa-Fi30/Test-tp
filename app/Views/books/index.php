@@ -71,7 +71,7 @@
                                 <p><?= ($book['dispo'] == 1) ? '<span class="text-dispo">Disponible</span>' : '<span class="text-notdispo">Not disponible</span>' ?></p>
                             </div>
                             <p>description</p>
-                            <?php if ($book['dispo'] == 1): ?>
+                            <?php if ($book['dispo'] == 1 && session()->get('user_type') === 'client'): ?>
                                 <a href="/confirmBorrow/<?= $book['id'] ?>" class="btnlend" type="button">Lend</a>
                             <?php elseif ($book['dispo'] == 0): ?>
                                 <a class="btnlendoff" type="button">Lend</a>
