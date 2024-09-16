@@ -75,6 +75,7 @@
                                 <a href="/confirmBorrow/<?= $book['id'] ?>" class="btnlend" type="button">Lend</a>
                             <?php elseif ($book['dispo'] == 0): ?>
                                 <a class="btnlendoff" type="button">Lend</a>
+
                             <?php endif; ?>
 
                         </div>
