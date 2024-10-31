@@ -18,6 +18,5 @@ use Illuminate\Support\Facades\Route;
 
 
 Route::get('/', [CollaboratorsController::class, 'index']);
-Route::get('/search', [SearchController::class, 'index'])->name('search');
 Route::get('/logs', [LogController::class, 'index']);
-Route::get('/logsfilter', [SearchController::class, 'filter'])->name('logs.filter');
+Route::get('/logsfilter', [LogController::class, 'filter'])->name('logs.filter');

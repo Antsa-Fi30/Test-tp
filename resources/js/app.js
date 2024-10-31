@@ -2,7 +2,7 @@ window.filterTable = () => {
     const input = document.getElementById("searchquery");
     const filter = input.value.toUpperCase();
     const table = document.getElementById("tableCollabs");
-    const tr = table.getElementsByTagName("tr");
+    const tr = table.getElementsByTagName("tr"); //ligne
 
     for (let i = 0; i < tr.length; i++) {
         let td = tr[i].getElementsByTagName("td")[0];
@@ -17,5 +17,3 @@ window.filterTable = () => {
         }
     }
 };
-
-window.filterDate = () => {};

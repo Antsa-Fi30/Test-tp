@@ -6,7 +6,7 @@
 @section('content')
 <div class="container">
     <form action="{{ route('logs.filter') }}">
-        <input type="date" id="dateFilter" placeholder="Filtrer par date" class="mb-4 border border-gray-300 rounded p-2">
+        <input value="2021-03-01" type="date" name="datequery" placeholder="Filtrer par date" class="mb-4 border border-gray-300 rounded p-2">
         <button class="bg-slate-700 py-2 px-1 rounded-md text-white duration-500 transition-all hover:bg-slate-200" type="submit">Filtrer</button>
     </form>
 
@@ -54,17 +54,30 @@
                                 <td class="p-4 border-b border-blue-gray-50">
                                     <p class="block font-sans text-sm antialiased font-normal leading-normal text-blue-gray-900">
                                         {{$logunique['time']}}
-
                                     </p>
                                 </td>
 
                                 <td class="p-4 border-b border-blue-gray-50">
                                     <p class="block font-sans text-sm antialiased font-normal leading-normal text-blue-gray-900">
+                                        @if ($logunique['event_point_name'] === 'TRIPOD01-ENTREE' || $logunique['event_point_name'] === 'TRIPOD02-ENTREE' )
                                         {{$logunique['event_point_name']}}
+                                        @else
+                                        <span>-</span>
+                                        @endif
                                     </p>
                                 </td>
-                                @endforeach
 
+                                <td class="p-4 border-b border-blue-gray-50">
+                                    <p class="block font-sans text-sm antialiased font-normal leading-normal text-blue-gray-900">
+                                        @if ($logunique['event_point_name'] === 'TRIPOD01-SORTIE' || $logunique['event_point_name'] === 'TRIPOD02-SORTIE' )
+                                        {{$logunique['event_point_name']}}
+                                        @else
+                                        <span>-</span>
+                                        @endif
+                                    </p>
+                                </td>
+                            </tr>
+                            @endforeach
                         </tbody>
                     </table>
                 </div>
