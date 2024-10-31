@@ -1,6 +1,8 @@
 <?php
 
+use App\Http\Controllers\CollaboratorsController;
 use App\Http\Controllers\LogController;
+use App\Http\Controllers\SearchController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -15,4 +17,7 @@ use Illuminate\Support\Facades\Route;
 */
 
 
-Route::get('/', [LogController::class, 'index']);
+Route::get('/', [CollaboratorsController::class, 'index']);
+Route::get('/search', [SearchController::class, 'index'])->name('search');
+Route::get('/logs', [LogController::class, 'index']);
+Route::get('/logsfilter', [SearchController::class, 'filter'])->name('logs.filter');
